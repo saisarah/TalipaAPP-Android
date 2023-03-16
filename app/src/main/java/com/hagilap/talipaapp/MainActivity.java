@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainWebveiw = findViewById(R.id.mainWebView);
-        mainWebveiw.loadUrl("http://localhost:8000/index.html");
+        mainWebveiw.loadUrl("https://app.talipaapp.com");
         mainWebveiw.setWebViewClient(new myWebClient());
         WebSettings webSettings = mainWebveiw.getSettings();
         webSettings.setJavaScriptEnabled(true);
