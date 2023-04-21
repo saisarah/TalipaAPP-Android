@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainWebveiw = findViewById(R.id.mainWebView);
-        mainWebveiw.loadUrl("https://app.talipaapp.com");
+        mainWebveiw.loadUrl("https://app.talipaapp.com/");
         mainWebveiw.setWebViewClient(new myWebClient());
         WebSettings webSettings = mainWebveiw.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -84,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
                         consoleMessage.lineNumber() + " of " + consoleMessage.sourceId());
                 return true;
             }
-
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
             @Override
             public boolean onShowFileChooser(WebView view, ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams)
             {
